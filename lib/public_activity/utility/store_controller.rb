@@ -14,6 +14,7 @@ module PublicActivity
   # Module included in controllers to allow p_a access to controller instance
   module StoreController
     extend ActiveSupport::Concern
+    include AbstractController::Callbacks
 
     included do
       around_action :store_controller_for_public_activity if     respond_to?(:around_action)
